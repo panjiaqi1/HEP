@@ -1,26 +1,17 @@
-#include "window.h"
-#include "ui_window.h"
+#include "image_window.h"
+#include "ui_image_window.h"
 #include <QDebug>
 #include <QTextEdit>
 /**
- * @brief Window::Window
+ * @brief ImageWindow::ImageWindow
  * @param parent
- * 绘制坐标窗口
+ * 绘图坐标窗口
  */
 
-Window::Window(QWidget *parent) :
+ImageWindow::ImageWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::Window)
+    ui(new Ui::ImageWindow)
 {
-    //创建队列
-    srand( static_cast<unsigned int>(time(nullptr)));
-    int n=50;
-    for(int i=0; i<n; i++)
-    {
-        queue.enqueue(qrand()%100);
-        qDebug() << queue;
-    }
-
     ui->setupUi(this);
 
     //设置标题
@@ -30,7 +21,17 @@ Window::Window(QWidget *parent) :
     connect(ui->Singout, &QAction::triggered, [=](){this->close();});
 
     //模态对话框（参数设置）
-    connect(ui->Parameter, &QAction::triggered, [=](){Dialog.exec();});
+    connect(ui->Parameter, &QAction::triggered, [=](){parameterDialog.exec();});
+}
+
+void ImageWindow::start(){
+    //创建队列
+    srand( static_cast<unsigned int>(time(nullptr)));
+    int n=50;
+    for(int i=0; i<n; i++)
+    {
+        queue.enqueue(qrand()%100);
+    }
 
     //定时器
     Timer = new QTimer(this);
@@ -70,9 +71,10 @@ Window::Window(QWidget *parent) :
         }
     }
     );
+    this->show();
 }
 
-Window::~Window()
+ImageWindow::~ImageWindow()
 {
     delete ui;
 }

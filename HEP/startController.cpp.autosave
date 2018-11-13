@@ -1,6 +1,6 @@
-#include "mainwindow.h"
+#include "startController.h"
 #include "ui_mainwindow.h"
-#include "window.h"
+#include "imageController.h"
 /**
  * @brief MainWindow::MainWindow
  * @param parent

@@ -1,0 +1,27 @@
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+#include "imageController.h"
+#include "coordinatevoltage.h"
+
+
+namespace Ui {
+class MainWindow;
+}
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    explicit MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+    void changeWindon();
+
+private:
+    Ui::MainWindow *ui;
+    imageConller ;
+};
+
+#endif // MAINWINDOW_H
