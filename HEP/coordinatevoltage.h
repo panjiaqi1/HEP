@@ -3,11 +3,8 @@
 
 #include <QWidget>
 #include <QPaintEvent> //绘画事件
-#include <QtGui>       //引入用到的控件
 #include <QPainter>
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <QtGui>       //引入用到的控件
 
 
 class CoordinateVoltage : public QWidget
@@ -21,6 +18,7 @@ signals:
 private:
     QImage image;
 
+//画布
 protected:
     void paintEvent(QPaintEvent *){
         QPainter painter(this);

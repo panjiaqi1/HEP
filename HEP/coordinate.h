@@ -3,10 +3,8 @@
 
 #include <QWidget>
 #include <QPaintEvent> //绘画事件
-#include <QtGui>       //引入用到的控件
 #include <QPainter>
-#include <cstdlib>
-#include <ctime>
+#include <QtGui>       //引入用到的控件
 
 class Coordinate : public QWidget
 {
