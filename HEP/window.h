@@ -3,8 +3,8 @@
 
 #include <QMainWindow>
 #include <QTimer> //定时器
-#include "dialog.h"
 #include <QQueue> //队列
+#include "dialog.h"
 
 namespace Ui {
 class Window;
@@ -17,13 +17,12 @@ class Window : public QMainWindow
 public:
     explicit Window(QWidget *parent = nullptr);
     ~Window();
-    Ui::Window *ui;
 
 private:
-    //Ui::Window *ui;
-    Dialog Dialog;
-    QTimer *Timer;
-    QQueue<int> queue;
+    Ui::Window *ui;
+    Dialog Dialog;       //参数设置（模态框对话框）
+    QTimer *Timer;       //定时器
+    QQueue<int> queue;   // 队列
 };
 
 
