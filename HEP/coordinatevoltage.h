@@ -1,5 +1,5 @@
-#ifndef COORDINATETEMPERATURE_H
-#define COORDINATETEMPERATURE_H
+#ifndef COORDINATEVOLTAGE_H
+#define COORDINATEVOLTAGE_H
 
 #include <QWidget>
 #include <QPaintEvent> //绘画事件
@@ -7,26 +7,29 @@
 #include <QtGui>       //引入用到的控件
 
 
-class TemperatureCoordinate : public QWidget
+class CoordinateVoltage : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TemperatureCoordinate(QWidget *parent = nullptr);
+    explicit CoordinateVoltage(QWidget *parent = nullptr);
     void Paint();
-
 signals:
 
 private:
     QImage image;
 
+<<<<<<< HEAD:HEP/voltage_coordinate.h
+
+=======
+//画布
+>>>>>>> parent of 0db38bc... 代码重构:HEP/coordinatevoltage.h
 protected:
     void paintEvent(QPaintEvent *){
         QPainter painter(this);
         painter.drawImage(0,0,image);
     }
 
-
 public slots:
 };
 
-#endif // COORDINATETEMPERATURE_H
+#endif // COORDINATEVOLTAGE_H

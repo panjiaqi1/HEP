@@ -1,12 +1,16 @@
-#ifndef Coordinate_H
-#define Coordinate_H
+#ifndef COORDINATE_H
+#define COORDINATE_H
 
-#include <QImage>
-#include "point.h"
+#include <QWidget>
+#include <QPaintEvent> //绘画事件
+#include <QPainter>
+#include <QtGui>       //引入用到的控件
 
-class Coordinate
+class Coordinate : public QWidget
 {
+    Q_OBJECT
 public:
+<<<<<<< HEAD
     Coordinate();
     Coordinate(Point*, int);
     Coordinate(Point*, int, int);
@@ -27,6 +31,23 @@ private:
     int top, right, bottom, left, width, height, shareX, shareY, positiveX, negativeX, positiveY, negativeY;
     QString coordinateX, coordinateY;
     Point *originPoint;
+=======
+    explicit Coordinate(QWidget *parent = nullptr);
+    void Paint();
+
+signals:
+
+public slots:
+
+private:
+    QImage image;
+
+protected:
+    void paintEvent(QPaintEvent *){
+        QPainter painter(this);
+        painter.drawImage(0,0,image);
+    }
+>>>>>>> parent of 0db38bc... 代码重构
 };
 
-#endif // Coordinate_H
+#endif // COORDINATE_H

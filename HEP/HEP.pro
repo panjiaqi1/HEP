@@ -27,30 +27,25 @@ CONFIG += c++14
 
 SOURCES += \
         main.cpp \
-    image_window.cpp \
-    point.cpp \
-    voltage_temperature_coordinate.cpp \
-    voltage_coordinate.cpp \
-    temperature_coordinate.cpp \
+        mainwindow.cpp \
+    window.cpp \
     coordinate.cpp \
-    login_dialog.cpp \
-    parameter_dialog.cpp
-
+    coordinatevoltage.cpp \
+    coordinatetemperature.cpp \
+    dialog.cpp
 
 HEADERS += \
-    image_window.h \
-    point.h \
-    voltage_temperature_coordinate.h \
-    temperature_coordinate.h \
-    voltage_coordinate.h \
+        mainwindow.h \
+    window.h \
     coordinate.h \
-    login_dialog.h \
-    parameter_dialog.h
+    coordinatevoltage.h \
+    coordinatetemperature.h \
+    dialog.h
 
 FORMS += \
-    image_window.ui \
-    login_dialog.ui \
-    parameter_dialog.ui
+        mainwindow.ui \
+    window.ui \
+    dialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

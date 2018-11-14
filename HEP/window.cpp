@@ -1,4 +1,4 @@
-#include "imageWindow.h"
+#include "window.h"
 #include "ui_window.h"
 #include <QDebug>
 #include <QTextEdit>

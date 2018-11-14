@@ -1,6 +1,5 @@
-#include "login_dialog.h"
+#include "mainwindow.h"
 #include <QApplication>
-
 /**
  * @brief qMain
  * @param argc
@@ -12,8 +11,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    LoginDialog LoginDialog;
-    LoginDialog.show();
+    MainWindow w;
+    w.show();
 
     return a.exec();
 }

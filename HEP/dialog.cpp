@@ -1,14 +1,14 @@
-#include "parameter_dialog.h"
-#include "ui_parameter_dialog.h"
+#include "dialog.h"
+#include "ui_dialog.h"
 /**
  * @brief Dialog::Dialog
  * @param parent
  * 参数设置窗口
  */
 
-ParameterDialog::ParameterDialog(QWidget *parent) :
+Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::ParameterDialog)
+    ui(new Ui::Dialog)
 {
     ui->setupUi(this);
 
@@ -16,7 +16,7 @@ ParameterDialog::ParameterDialog(QWidget *parent) :
     setWindowTitle("参数设置");
 }
 
-ParameterDialog::~ParameterDialog()
+Dialog::~Dialog()
 {
     delete ui;
 }
