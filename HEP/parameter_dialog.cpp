@@ -12,7 +12,7 @@ ParameterDialog::ParameterDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //设置标题
+    // 设置标题
     setWindowTitle("参数设置");
 }
 

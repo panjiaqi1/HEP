@@ -18,7 +18,7 @@ signals:
 private:
     QImage image;
 
-    //画布
+
 protected:
     void paintEvent(QPaintEvent *){
         QPainter painter(this);

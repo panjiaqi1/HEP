@@ -31,14 +31,14 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="1" rowspan="2" colspan="6">
-     <widget class="Coordinate" name="widget_3" native="true">
+     <widget class="VoltageTemperatureCoordinate" name="widget_3" native="true">
       <property name="enabled">
        <bool>true</bool>
       </property>
      </widget>
     </item>
     <item row="2" column="1" rowspan="2" colspan="3">
-     <widget class="CoordinateTemperature" name="widget_4" native="true">
+     <widget class="VoltageCoordinate" name="widget_4" native="true">
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -48,7 +48,7 @@
      </widget>
     </item>
     <item row="2" column="4" rowspan="2" colspan="3">
-     <widget class="CoordinateVoltage" name="widget_5" native="true">
+     <widget class="TemperatureCoordinate" name="widget_5" native="true">
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -213,21 +213,21 @@ p, li { white-space: pre-wrap; }
  </widget>
  <customwidgets>
   <customwidget>
-   <class>Coordinate</class>
+   <class>VoltageTemperatureCoordinate</class>
    <extends>QWidget</extends>
-   <header>coordinate.h</header>
+   <header>voltagetemperaturecoordinate.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>CoordinateTemperature</class>
+   <class>VoltageCoordinate</class>
    <extends>QWidget</extends>
-   <header>coordinatetemperature.h</header>
+   <header>voltagecoordinate.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>CoordinateVoltage</class>
+   <class>TemperatureCoordinate</class>
    <extends>QWidget</extends>
-   <header location="global">coordinatevoltage.h</header>
+   <header location="global">temperaturecoordinate.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
