@@ -15,19 +15,28 @@ TemperatureCoordinate::TemperatureCoordinate(QWidget *parent) : QWidget(parent)
     // 对画布进行填充
     image.fill(backColor);
 
-    Paint();
+    initCoordinate();
 }
 
 // 绘制坐标轴
-void TemperatureCoordinate::Paint(){
-    Coordinate *coordinate = new Coordinate(new Point(40, 180), 140, 280, 140, 0);
+void TemperatureCoordinate::initCoordinate(){
+    coordinate = new Coordinate(*new QPoint(40, 280), 260, 280, 0, 0);
     coordinate->setWidth(300);
-    coordinate->setHeight(120);
+    coordinate->setHeight(240);
     coordinate->setShareX(10);
+    coordinate->setShareY(10);
     coordinate->setPositiveX(90);
-    coordinate->setShareY(5);
+    coordinate->setPositiveY(10);
     coordinate->setCoordinateX("t/s");
-    coordinate->setCoordinateY("V/mv");
+    coordinate->setCoordinateY("T/℃");
     coordinate->render(&image);
+}
+
+// 得到要画的点
+void TemperatureCoordinate::paint(AccessPoint accessPoint) {
+    QPointF *point = new QPointF();
+    point->setX(accessPoint.getSec());
+    point->setY(accessPoint.getTemperature());
+    coordinate->addpoint(point);
 }
 

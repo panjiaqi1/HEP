@@ -1,7 +1,6 @@
 #include "image_window.h"
 #include "ui_image_window.h"
-#include <QDebug>
-#include <QTextEdit>
+
 /**
  * @brief ImageWindow::ImageWindow
  * @param parent
@@ -24,14 +23,12 @@ ImageWindow::ImageWindow(QWidget *parent) :
     connect(ui->Parameter, &QAction::triggered, [=](){parameterDialog.exec();});
 }
 
+
 void ImageWindow::start(){
-    // 创建队列
-    srand( static_cast<unsigned int>(time(nullptr)));
-    int n=50;
-    for(int i=0; i<n; i++)
-    {
-        queue.enqueue(qrand()%100);
-    }
+
+    // 从服务中获取链表
+    CoordinateService *coordinateService = new CoordinateService();
+    this->list = coordinateService->getList();
 
     // 定时器
     Timer = new QTimer(this);
@@ -62,14 +59,18 @@ void ImageWindow::start(){
     connect(Timer, &QTimer::timeout,
             [=]()
     {
-        if (!queue.empty())
-        {
-            QString string = QString::number(queue.dequeue());
-            ui->textEdit->append(string);
+        if(!list.empty()){
+            AccessPoint accessPoint = list.front();
+            list.pop_front();
+            ui->textEdit->append(accessPoint.toString());
+            ui->widget_3->paint(accessPoint);
+            ui->widget_4->paint(accessPoint);
+            ui->widget_5->paint(accessPoint);
             repaint();
         }
     }
     );
+
     this->show();
 }
 

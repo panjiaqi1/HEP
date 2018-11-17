@@ -2,9 +2,11 @@
 #define COORDINATETEMPERATURE_H
 
 #include <QWidget>
-#include <QPaintEvent> //绘画事件
+#include <QPaintEvent>
 #include <QPainter>
-#include <QtGui>       //引入用到的控件
+#include <QtGui>
+#include "coordinate_service.h"
+#include "coordinate.h"
 
 
 class TemperatureCoordinate : public QWidget
@@ -12,13 +14,14 @@ class TemperatureCoordinate : public QWidget
     Q_OBJECT
 public:
     explicit TemperatureCoordinate(QWidget *parent = nullptr);
-    void Paint();
+    void initCoordinate();
+    void paint(AccessPoint);
 
 signals:
 
 private:
     QImage image;
-
+    Coordinate *coordinate;
 protected:
     void paintEvent(QPaintEvent *){
         QPainter painter(this);

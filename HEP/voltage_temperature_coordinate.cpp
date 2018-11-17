@@ -1,5 +1,7 @@
 #include "voltage_temperature_coordinate.h"
-#include "coordinate.h"
+#include "coordinate_service.h"
+
+
 /**
  * @brief VoltageTemperatureCoordinate::VoltageTemperatureCoordinate
  * @param parent
@@ -15,14 +17,21 @@ VoltageTemperatureCoordinate::VoltageTemperatureCoordinate(QWidget *parent) : QW
     // 对画布进行填充
     image.fill(backColor);
 
-
-    Paint();
+    initCoordinate();
 }
 
-//   绘制坐标轴
-void VoltageTemperatureCoordinate::Paint(){
-    Coordinate *coordinate = new Coordinate(new Point(40, 180), 160, 620, 160, 0);
+// 绘制坐标轴
+void VoltageTemperatureCoordinate::initCoordinate() {
+    coordinate = new Coordinate(*new QPoint(40, 180), 160, 620, 160, 0);
     coordinate->setCoordinateX("T/℃");
     coordinate->setCoordinateY("V/mv");
     coordinate->render(&image);
+}
+
+// 得到要画的点
+void VoltageTemperatureCoordinate::paint(AccessPoint accessPoint) {
+    QPointF *point = new QPointF();
+    point->setX(accessPoint.getTemperature());
+    point->setY(accessPoint.getVoltage());
+    coordinate->addpoint(point);
 }

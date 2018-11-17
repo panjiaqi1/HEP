@@ -4,7 +4,7 @@
 #include <QDialog>
 #include "image_window.h"
 
-//引入LoginDialog界面
+// 引入LoginDialog界面
 namespace Ui {
 class LoginDialog;
 }
@@ -19,9 +19,9 @@ public:
     ~LoginDialog();
 
 private:
-    //LoginDialog界面
+    // LoginDialog界面
     Ui::LoginDialog *ui;
-    //imagewindow模块
+    // imagewindow模块
     ImageWindow imageWindow;
 };
 

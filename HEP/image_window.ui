@@ -38,7 +38,7 @@
      </widget>
     </item>
     <item row="2" column="1" rowspan="2" colspan="3">
-     <widget class="VoltageCoordinate" name="widget_4" native="true">
+     <widget class="TemperatureCoordinate" name="widget_4" native="true">
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -48,7 +48,7 @@
      </widget>
     </item>
     <item row="2" column="4" rowspan="2" colspan="3">
-     <widget class="TemperatureCoordinate" name="widget_5" native="true">
+     <widget class="VoltageCoordinate" name="widget_5" native="true">
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -72,7 +72,7 @@
        </size>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="2" column="1">
+       <item row="0" column="1">
         <widget class="QTextEdit" name="textEdit">
          <property name="styleSheet">
           <string notr="true">font: 75 italic 9pt &quot;Arial&quot;;</string>
@@ -85,16 +85,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit"/>
        </item>
       </layout>
      </widget>
@@ -215,19 +205,19 @@ p, li { white-space: pre-wrap; }
   <customwidget>
    <class>VoltageTemperatureCoordinate</class>
    <extends>QWidget</extends>
-   <header>voltagetemperaturecoordinate.h</header>
+   <header>voltage_temperature_coordinate.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>VoltageCoordinate</class>
    <extends>QWidget</extends>
-   <header>voltagecoordinate.h</header>
+   <header>voltage_coordinate.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>TemperatureCoordinate</class>
    <extends>QWidget</extends>
-   <header location="global">temperaturecoordinate.h</header>
+   <header location="global">temperature_coordinate.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

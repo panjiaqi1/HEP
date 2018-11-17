@@ -28,24 +28,26 @@ CONFIG += c++14
 SOURCES += \
         main.cpp \
     image_window.cpp \
-    point.cpp \
     voltage_temperature_coordinate.cpp \
-    voltage_coordinate.cpp \
-    temperature_coordinate.cpp \
     coordinate.cpp \
     login_dialog.cpp \
-    parameter_dialog.cpp
+    parameter_dialog.cpp \
+    coordinate_service.cpp \
+    access_point.cpp \
+    temperature_coordinate.cpp \
+    voltage_coordinate.cpp
 
 
 HEADERS += \
     image_window.h \
-    point.h \
     voltage_temperature_coordinate.h \
     temperature_coordinate.h \
     voltage_coordinate.h \
     coordinate.h \
     login_dialog.h \
-    parameter_dialog.h
+    parameter_dialog.h \
+    coordinate_service.h \
+    access_point.h
 
 FORMS += \
     image_window.ui \
